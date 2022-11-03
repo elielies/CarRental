@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Todor",
+      "lastName": "Ivanov",
+      "email": "todor@abv.bg",
+      "password": "123",
+      "address": "plovdiv 326",
+      "photo": "https://picsum.photos/200/300?random=1",
+      "isAdmin": "true"
+    },
+    {
+      "id": 2,
+      "firstName": "Stela",
+      "lastName": "Angelova",
+      "email": "stela@abv.bg",
+      "password": "123456",
+      "address": "stara zagora 326",
+      "photo": "https://picsum.photos/200/300?random=0.13979434215239062",
+      "isAdmin": "false"
+    },
+    {
+      "firstName": "belle",
+      "lastName": "gaston",
+      "password": "52434231",
+      "email": "belle@abv.bg",
+      "id": 7,
+      "photo": "https://picsum.photos/200/300?random=0.3683714117205166",
+      "isAdmin": "false"
+    },
+    {
+      "firstName": "Miro",
+      "lastName": "Petrov",
+      "email": "svdvsdc@sdcv",
+      "address": "ghjk",
+      "password": "jmk,",
+      "photo": "https://picsum.photos/200/300?random=0.3036813102786977",
+      "id": 9,
+      "isAdmin": "true"
+    },
+    {
+      "firstName": "Stella",
+      "lastName": "Petkova",
+      "email": "stella@abv.bg",
+      "address": "Bulgaria 236",
+      "password": "123",
+      "photo": "https://picsum.photos/200/300?random=0.24308252649104944",
+      "isAdmin": "true",
+      "id": 10
+    }
+  ],
+  "tasks": [
+    {
+      "title": "buy tp",
+      "description": "shittt",
+      "status": "Done",
+      "createdDate": "10/27/2022, 11:14:27 AM",
+      "authorId": 1,
+      "authorName": "Todor Ivanov",
+      "id": 2
+    },
+    {
+      "title": "groceries",
+      "description": "food",
+      "status": "InProgress",
+      "createdDate": "10/28/2022, 11:14:27 AM",
+      "authorId": 1,
+      "authorName": "Todor Ivanov",
+      "id": 3
+    }
+  ],
+  "vehicles": [
+    {
+      "type": "economy",
+      "brand": "Audi",
+      "model": "A4",
+      "constructionYear": "2002",
+      "fuelType": "diesel",
+      "seatCount": "4",
+      "picture": "",
+      "pricePDay": "50",
+      "count": 9,
+      "photo": "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/2002_Audi_A4_Avant.jpg",
+      "id": 1
+    }
+  ],
+  "rentals": [
+    {
+      "startDate": "11/3/2022, 2:00:00 AM",
+      "endDate": "11/23/2022, 2:00:00 AM",
+      "price": 45,
+      "id": "110",
+      "vehicle": "Audi",
+      "vehicleId": 1,
+      "customerId": 10,
+      "customer": "Stella Petkova"
+    }
+  ]
+}

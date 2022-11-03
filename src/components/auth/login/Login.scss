@@ -1,0 +1,21 @@
+
+.login-form-wrapper{
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form{
+        border: 1px solid lightgray;
+        padding: 20px;
+        text-align: center;
+        background-color: lightgray;
+        border-radius: 10px;
+
+        div{
+            margin: 10px;
+        }
+    }
+}
+
