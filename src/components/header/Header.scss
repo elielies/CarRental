@@ -1,3 +1,32 @@
 .header{
-    background-color: aquamarine;
+    background-color: #1C1C1E;
+}
+
+#logo{
+    color: #FFFFFF;
+}
+
+.nav-link{
+    color: #FFFFFF;
+}
+
+.nav-link:hover{
+    color: #C3C4C8  ;
+}
+
+.btn-cred{
+    background-color: #e61815;
+    border-radius: 20px;
+    border: none;
+    width: 7rem;
+}
+
+
+.btn-cred:hover{
+    background-color: #c9100c;
+}
+
+.btn-cred:visited{
+    background-color: #c9100c;
+
 }

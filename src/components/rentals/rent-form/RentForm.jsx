@@ -96,7 +96,7 @@ export  function RentForm() {
             <Form onSubmit={onFormSubmit}>
                 <Form.Group>
                     <Form.Label>Vehicle</Form.Label>
-                    <Form.Control type="text" name="vehicle" onChange={onFormChange} value={rentalVeh.brand}></Form.Control>
+                    <Form.Control type="text" name="vehicle" onChange={onFormChange} value={`${rentalVeh.brand} ${rentalVeh.model}`}></Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Start date</Form.Label>

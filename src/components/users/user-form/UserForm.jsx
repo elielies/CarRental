@@ -14,7 +14,7 @@ export function UserForm() {
         firstName: '',
         lastName: '',
         email: '',
-        address: '',
+        // address: '',
         password: '',
         photo: '',
         isAdmin: false
@@ -69,41 +69,57 @@ export function UserForm() {
         });
     }
 
+    const navigateToLogin = () => {
+        navigate('/login');
+    }
+
     return (
+        <div className="">
         <div className="user-form-wrapper">
+            <h1 className="form-title">Register</h1>
             <Form className="user-form" onSubmit={submitHandler}>
                 <Form.Group className="mb-3" controlId="formBasicFName">
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control type="text" name="firstName" placeholder="Enter first name" onChange={onFormControlChange} value={currentUser.firstName} required/>
+                    <Form.Label className="form-label">First Name</Form.Label>
+                    <Form.Control className="input-field" type="text" name="firstName" placeholder="Enter first name" onChange={onFormControlChange} value={currentUser.firstName} required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicLName">
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="text" name="lastName" placeholder="Enter last name" onChange={onFormControlChange} value={currentUser.lastName} required/>
+                    <Form.Label className="form-label">Last Name</Form.Label>
+                    <Form.Control className="input-field" type="text" name="lastName" placeholder="Enter last name" onChange={onFormControlChange} value={currentUser.lastName} required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter email" onChange={onFormControlChange} value={currentUser.email} required/>
+                    <Form.Label className="form-label">Email</Form.Label>
+                    <Form.Control className="input-field" type="email" name="email" placeholder="Enter email" onChange={onFormControlChange} value={currentUser.email} required/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicAddress">
+                {/* <Form.Group className="mb-3" controlId="formBasicAddress">
                     <Form.Label>Address</Form.Label>
                     <Form.Control type="text" name="address" placeholder="Enter address" onChange={onFormControlChange} value={currentUser.address}/>
-                </Form.Group>
+                </Form.Group> */}
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password" onChange={onFormControlChange} value={currentUser.password} required/>
+                    <Form.Label className="form-label">Password</Form.Label>
+                    <Form.Control className="input-field" type="password" name="password" placeholder="Password" onChange={onFormControlChange} value={currentUser.password} required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPhoto">
-                    <Form.Label>Photo</Form.Label>
-                    <Form.Control type="text" name="photo" placeholder="Enter photo" onChange={onFormControlChange} value={currentUser.photo}/>
+                    <Form.Label className="form-label">Photo</Form.Label>
+                    <Form.Control className="input-field" type="text" name="photo" placeholder="Enter photo" onChange={onFormControlChange} value={currentUser.photo}/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPhoto">
+                {/* <Form.Group className="mb-3" controlId="formBasicPhoto">
                     <Form.Label>Is Admin</Form.Label>
                     <Form.Check name="isAdmin" onChange={onCheckboxChange} checked={ parseBool(currentUser.isAdmin) }/>
-                </Form.Group>
-                <Button variant="primary" type="submit" >
-                    Submit
-                </Button>
+                </Form.Group> */}
+                <div className="row mt-5">
+                    <div className="col-5">
+                        <Button className="btn btn-submit" variant="primary" type="submit" >REGISTER</Button>
+                    </div>
+                    <div className="col">
+                        <p id="membership">Already a member?&nbsp;
+                            <a className="sign-in-link" onClick={navigateToLogin}>Sign in</a>
+                        </p>
+                    </div>
+                </div>
+                
             </Form>
+           
+        </div>
         </div>
     )
 }

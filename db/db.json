@@ -15,7 +15,7 @@
       "firstName": "Stela",
       "lastName": "Angelova",
       "email": "stela@abv.bg",
-      "password": "123456",
+      "password": "123",
       "address": "stara zagora 326",
       "photo": "https://picsum.photos/200/300?random=0.13979434215239062",
       "isAdmin": "false"
@@ -48,6 +48,15 @@
       "photo": "https://picsum.photos/200/300?random=0.24308252649104944",
       "isAdmin": "true",
       "id": 10
+    },
+    {
+      "firstName": "Maria",
+      "lastName": "Ivanova",
+      "email": "maria@abv.bg",
+      "password": "123",
+      "photo": "https://picsum.photos/200/300?random=0.4154261863330666",
+      "isAdmin": false,
+      "id": 11
     }
   ],
   "tasks": [
@@ -83,6 +92,32 @@
       "count": 9,
       "photo": "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/2002_Audi_A4_Avant.jpg",
       "id": 1
+    },
+    {
+      "type": "economy",
+      "brand": "BMW",
+      "model": "E60",
+      "constructionYear": "2005",
+      "fuelType": "diesel",
+      "seatCount": "4",
+      "picture": "",
+      "pricePDay": "40",
+      "count": "6",
+      "photo": "https://7cars.bg/wp-content/uploads/2021/11/0-02-05-fe739577009591971c22f5e561a25484032db3696b1c274f4e34262ab1a86d50_44847727e9b370d0-876x535.jpg",
+      "id": 2
+    },
+    {
+      "type": "economy",
+      "brand": "Mercedes",
+      "model": "CLS350d AMG 4MATIC",
+      "constructionYear": "2014",
+      "fuelType": "diesel",
+      "seatCount": "4",
+      "picture": "",
+      "pricePDay": "63",
+      "count": 3,
+      "photo": "https://7cars.bg/wp-content/uploads/2022/10/0-02-05-031a1a5aa0876164511d7335d773e8d4891ab71d211105b76a3fac44b6b54228_b42e5cdee3df73d1.jpg",
+      "id": 3
     }
   ],
   "rentals": [
@@ -93,6 +128,16 @@
       "id": "110",
       "vehicle": "Audi",
       "vehicleId": 1,
+      "customerId": 10,
+      "customer": "Stella Petkova"
+    },
+    {
+      "startDate": "11/3/2022, 2:00:00 AM",
+      "endDate": "12/10/2022, 2:00:00 AM",
+      "price": 56.7,
+      "id": "310",
+      "vehicle": "Mercedes",
+      "vehicleId": 3,
       "customerId": 10,
       "customer": "Stella Petkova"
     }

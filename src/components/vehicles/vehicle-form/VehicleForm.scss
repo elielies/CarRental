@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 
-.user-form-wrapper{
+.main-content{
+    background-color: #EBEBEB;
+
+}
+
+// body{
+//     background-image: url("https://d39a3h63xew422.cloudfront.net/wp-content/uploads/2013/03/20094009/draw-dream-car-1476934855498.jpg");
+// }
+
+.vehicle-form-wrapper{
     background-color: white;
     border-radius: 10px;
-    width: 60%;
+    width: 40%;
     margin: auto;
     margin-top: 4rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -15,10 +25,16 @@
     font-weight: bold;
 }
 
-.user-form{
-    width: 50%;
+.form{
+    // width: 60%;
+    // margin-top: 5rem;
+    // align-items: end;
+    // margin-left: 30rem;
+    outline: none;
     padding: 4rem 5rem 3rem 5rem;
 }
+
+
 
 .form-label{
     // font-family: 'Roboto', sans-serif;
@@ -40,21 +56,18 @@
     background-color: #dedcdc;
 }
 
-.btn-submit{
+.form-btn{
     background-color: #e61815;
-    border-radius: 20px;
     border: none;
-    width: 9rem;
-    font-weight:600;
-
-    // margin-top: 1rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 10rem;
 }
 
-.btn-submit:hover{
+.form-btn:hover {
     background-color: #c9100c;
 }
 
-#membership{
-    padding-top: 0.4rem;
-    font-weight:600;
-}
+
+

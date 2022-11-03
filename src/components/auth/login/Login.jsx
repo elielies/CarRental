@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import { login } from "../../../utils/services/auth-http-utils";
+import { getLoggedUser, login } from "../../../utils/services/auth-http-utils";
+import { Header } from "../../header/Header";
 import './Login.scss';
 
 
@@ -10,6 +11,7 @@ export function Login() {
     const [loginCreds, setLoginCreds] = useState({});
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const loggedUser = getLoggedUser();
 
     
 
@@ -28,7 +30,7 @@ export function Login() {
         event.preventDefault();
         login(loginCreds)
             .then(() => {
-                navigate('/users')
+                navigate('/vehicles')
             })
             .catch(() => {
                 setError(error.message);
@@ -37,6 +39,8 @@ export function Login() {
 
 
     return (
+        <>
+        <Header></Header>
         <div className="login-form-wrapper">
             <Form className="login-form" onSubmit={onFormSubmit}>
                 <span className="text-danger">
@@ -53,5 +57,6 @@ export function Login() {
                 <Button type="submit">Login</Button>
             </Form>
         </div>
+        </>
     )
 }

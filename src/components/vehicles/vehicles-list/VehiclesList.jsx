@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { deleteVehicle, getVehicles, rentVehicle } from "../../../utils/services/vehicle-http-utils";
 import { VehicleCard } from "../vehicle-details/VehicleCard";
 import React from "react";
+import './VehiclesList.scss';
 
 
 export function VehiclesList() {

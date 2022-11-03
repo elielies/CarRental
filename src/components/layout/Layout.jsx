@@ -10,7 +10,7 @@ export function Layout() {
         <div className="layout">
             <Header />
             <Main />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

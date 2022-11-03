@@ -1,6 +1,6 @@
 import React from "react";
 import './Header.scss';
-import { Navbar } from "react-bootstrap";
+import { Button, Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import {Container} from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -22,15 +22,27 @@ export function Header() {
 
     const renderLogin = () => {
         if(loggedUser) {
-            return <Link className="nav-link" onClick={onLogout}>Logout</Link>
+            return <Button id="logout-btn" className="btn btn-cred" onClick={onLogout}>Logout</Button>
+            // return <Link className="nav-link" onClick={onLogout}>Logout</Link>
         }
-        return <Link className="nav-link" onClick={onLogout}>Login</Link>
+        return <Button id="login-btn" className="btn btn-cred" onClick={onLogout}>Login</Button>
+        // return <Link className="nav-link" onClick={onLogout}>Login</Link>
+    }
+
+    const renderCreate =() => {
+        if(loggedUser.isAdmin) {
+            return <>
+                    <Link className="nav-link" to="/users/create">Create users</Link>
+                    <Link className="nav-link" to="/vehicles/create">Create vehicle</Link>
+                    <Link className="nav-link" to="/rentals">Rentals</Link>
+            </>
+        }
     }
     return (
         <div className="header">
-            <Navbar bg="light" expand="lg">
+            <Navbar className="navbar-dark" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand id="logo" href="#home">Rent-A-Car</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
@@ -41,6 +53,7 @@ export function Header() {
                     <Link className="nav-link" to="/vehicles">Vehicles</Link>
                     <Link className="nav-link" to="/vehicles/create">Create vehicle</Link>
                     <Link className="nav-link" to="/rentals">Rentals</Link>
+                    {/* {renderCreate()} */}
                 </Nav>
                 {renderLogin()}
 
