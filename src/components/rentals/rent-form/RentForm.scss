@@ -1,20 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-
-.main-content{
-    background-color: #EBEBEB;
-    padding-bottom: 5rem;
-    // margin-bottom: 10rem;
-}
-
-
-
-.vehicle-form-wrapper{
+.task-form-wrapper{
     background-color: white;
+    border: none;
     border-radius: 10px;
-    width: 40%;
+    width: 35%;
     margin: auto;
     margin-top: 4rem;
+    text-align: left;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
@@ -24,20 +16,16 @@
 }
 
 .form{
-    outline: none;
+    // border: none;
     padding: 4rem 5rem 3rem 5rem;
 }
 
-
-
 .form-label{
-    // font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
 .input-field {
     background-color: #e6e7e8;
-    // background-color: #fcd3d2;
     border: none;
     margin-bottom: 1rem;
     font-family: 'Roboto', sans-serif;
@@ -50,31 +38,16 @@
     background-color: #dedcdc;
 }
 
+
 .form-btn{
-    // background-color: #e61815;
+    background-color: #e61815;
     border: none;
     margin-top: 2rem;
-    // font-weight: bold;
+    font-weight: bold;
     border-radius: 20px;
     width: 10rem;
-
-    background: -webkit-linear-gradient(right, #c9100c, #e61815 );
-    font-weight:600;
-    transition: 0.3s;
 }
 
 .form-btn:hover {
-    // background-color: #c9100c;
-    box-shadow: 0px 1px 15px #ee2925;
-
+    background-color: #c9100c;
 }
-
-.btn-back{
-    margin-top: 4rem;
-    border-radius: 20px;
-    width: 10rem;
-    font-weight: bold;
-}
-
-
-

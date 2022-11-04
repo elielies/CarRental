@@ -21,23 +21,13 @@
       "isAdmin": "false"
     },
     {
-      "firstName": "belle",
-      "lastName": "gaston",
+      "firstName": "Belle",
+      "lastName": "Leclerc",
       "password": "52434231",
       "email": "belle@abv.bg",
       "id": 7,
       "photo": "https://picsum.photos/200/300?random=0.3683714117205166",
       "isAdmin": "false"
-    },
-    {
-      "firstName": "Miro",
-      "lastName": "Petrov",
-      "email": "svdvsdc@sdcv",
-      "address": "ghjk",
-      "password": "jmk,",
-      "photo": "https://picsum.photos/200/300?random=0.3036813102786977",
-      "id": 9,
-      "isAdmin": "true"
     },
     {
       "firstName": "Stella",
@@ -51,7 +41,7 @@
     },
     {
       "firstName": "Maria",
-      "lastName": "Ivanova",
+      "lastName": "Rangelova",
       "email": "maria@abv.bg",
       "password": "123",
       "photo": "https://picsum.photos/200/300?random=0.4154261863330666",
@@ -89,7 +79,7 @@
       "seatCount": "4",
       "picture": "",
       "pricePDay": "50",
-      "count": 9,
+      "count": 8,
       "photo": "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/2002_Audi_A4_Avant.jpg",
       "id": 1
     },
@@ -102,7 +92,7 @@
       "seatCount": "4",
       "picture": "",
       "pricePDay": "40",
-      "count": "6",
+      "count": 3,
       "photo": "https://7cars.bg/wp-content/uploads/2021/11/0-02-05-fe739577009591971c22f5e561a25484032db3696b1c274f4e34262ab1a86d50_44847727e9b370d0-876x535.jpg",
       "id": 2
     },
@@ -115,15 +105,15 @@
       "seatCount": "4",
       "picture": "",
       "pricePDay": "63",
-      "count": 3,
+      "count": 2,
       "photo": "https://7cars.bg/wp-content/uploads/2022/10/0-02-05-031a1a5aa0876164511d7335d773e8d4891ab71d211105b76a3fac44b6b54228_b42e5cdee3df73d1.jpg",
       "id": 3
     }
   ],
   "rentals": [
     {
-      "startDate": "11/3/2022, 2:00:00 AM",
-      "endDate": "11/23/2022, 2:00:00 AM",
+      "startDate": "2022-11-14",
+      "endDate": "2022-11-16",
       "price": 45,
       "id": "110",
       "vehicle": "Audi",
@@ -132,12 +122,22 @@
       "customer": "Stella Petkova"
     },
     {
-      "startDate": "11/3/2022, 2:00:00 AM",
-      "endDate": "12/10/2022, 2:00:00 AM",
+      "startDate": "2022-11-03",
+      "endDate": "2022-11-22",
       "price": 56.7,
       "id": "310",
       "vehicle": "Mercedes",
       "vehicleId": 3,
+      "customerId": 10,
+      "customer": "Stella Petkova"
+    },
+    {
+      "startDate": "2022-11-03",
+      "endDate": "2022-10-30",
+      "price": 38,
+      "id": "210",
+      "vehicle": "BMW",
+      "vehicleId": 2,
       "customerId": 10,
       "customer": "Stella Petkova"
     }

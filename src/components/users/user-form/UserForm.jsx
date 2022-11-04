@@ -75,7 +75,8 @@ export function UserForm() {
 
     return (
         <div className="">
-        <div className="user-form-wrapper">
+        <div className="user-form-wrapper row">
+            <div className="col">
             <h1 className="form-title">Register</h1>
             <Form className="user-form" onSubmit={submitHandler}>
                 <Form.Group className="mb-3" controlId="formBasicFName">
@@ -118,7 +119,15 @@ export function UserForm() {
                 </div>
                 
             </Form>
-           
+            </div>
+            <div className="col underlay">
+                {/* <div className="underlay"></div> */}
+                <div>
+                    <h3>Rent-A-Car</h3>
+                    {/* <img src="https://i.pinimg.com/originals/3c/a4/f5/3ca4f59bd88a1a064e8463a33c104b0b.png"></img> */}
+                    {/* <img src="register-car.jpg"></img> */}
+                </div>
+            </div>
         </div>
         </div>
     )

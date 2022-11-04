@@ -15,7 +15,10 @@
 }
 
 .btn-cred{
-    background-color: #e61815;
+    // background-color: #e61815;
+    background: -webkit-linear-gradient(right, #c9100c, #e61815 );
+    font-weight:600;
+    transition: 0.3s;
     border-radius: 20px;
     border: none;
     width: 7rem;
@@ -23,7 +26,9 @@
 
 
 .btn-cred:hover{
-    background-color: #c9100c;
+    // background-color: #c9100c;
+    box-shadow: 0px 1px 15px #ee2925;
+
 }
 
 .btn-cred:visited{

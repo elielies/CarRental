@@ -13,7 +13,9 @@ export function getUserById(id) {
 export function saveUser(userObj) {
 
     if(!userObj.photo) {
-        userObj.photo = `https://picsum.photos/200/300?random=${Math.random()}`
+        // https://randomuser.me/api/portraits/men/41.jpg
+        // userObj.photo = `https://picsum.photos/200/300?random=${Math.random()}`
+        userObj.photo = `https://randomuser.me/api/portraits/men/${Math.random().jpg}`
     }
 
     if(userObj.id) {

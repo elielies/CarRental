@@ -51,10 +51,21 @@ export  function VehicleForm() {
         })
     }
 
+    const navigateToVehicles = () =>{
+        navigate('/vehicles');
+    }
+
     return (
         <>
         <div className="vehicle-form-wrapper">
-            <h1 className="form-title">Add Vehicle</h1>
+            <div className="row">
+                <div className="col-8">
+                <h1 className="form-title">Add vehicle</h1>
+                </div>
+                <div className="col">
+                <Button className="btn btn-back" onClick={navigateToVehicles}>All vehicles</Button>
+                </div>
+            </div>
             <Form className="form" onSubmit={onFormSubmit}>
                 <div className="row">
                     <div className="col">
