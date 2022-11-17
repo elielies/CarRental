@@ -1,6 +1,6 @@
 import { getLoggedUser } from "./auth-http-utils";
 import axios from "axios";
-import { VehicleCard } from "../../components/vehicles/vehicle-details/VehicleCard";
+import { VehicleCard } from "../../components/vehicles/vehicle-card/VehicleCard";
 import React from "react";
 
 

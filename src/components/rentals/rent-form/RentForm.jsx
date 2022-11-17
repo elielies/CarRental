@@ -13,7 +13,6 @@ export  function RentForm() {
 
     const navigate = useNavigate();
     const params = useParams();
-    // const rentalVeh = getRentVehicle();
     const rentalVeh = getRentedVeh();
     const loggedUser = getLoggedUser();
     
@@ -35,7 +34,7 @@ export  function RentForm() {
 
     
 
-    const onFormChange = (event) => {
+    const onFormChangeHandler = (event) => {
         setCurrentRental((prevState)=>{
             return {
                 ...prevState,
@@ -44,16 +43,7 @@ export  function RentForm() {
         });
     }
 
-    // const onFormSubmit = (event) => {
-    //     event.preventDefault();  
-        
-    //     saveRental(currentRental).then(()=>{
-    //         navigate('/vehicles');
-    //     })
-    // }
-
-
-    const onFormSubmit = (event) => {
+    const onFormSubmitHandler = (event) => {
         event.preventDefault();  
         rentVehicle(rentalVeh).then(() => {
             saveRental(currentRental).then(()=>{
@@ -84,7 +74,7 @@ export  function RentForm() {
     priceCalc();
 
 
-    const onPriceChange = (event) => {
+    const onPriceChangeHandler = (event) => {
         setCurrentRental((prevState) => {
             return {
                 ...prevState,
@@ -93,47 +83,43 @@ export  function RentForm() {
         })
     }
 
-    const prevPageHandler = () => {
-         navigate('/vehicles');
-    }
 
     const navigateToVehicles = () =>{
         navigate('/vehicles');
     }
 
     return (
-        <div className="task-form-wrapper">
-            {/* <h1 className="form-title">Rent Vehicle</h1> */}
+        <div className="rent-form-wrapper">
             <div className="row">
-                <div className="col-8">
+                <div className="col-6">
                 <h1 className="form-title">Rent vehicle</h1>
                 </div>
-                <div className="col">
+                <div className="col btn-back-container">
                 <Button className="btn btn-back" onClick={navigateToVehicles}>Back to vehicles</Button>
                 </div>
             </div>
-            <Form  className="form" onSubmit={onFormSubmit}>
+            <Form  className="form" onSubmit={onFormSubmitHandler}>
                 <Form.Group>
                     <Form.Label className="form-label">Vehicle</Form.Label>
-                    <Form.Control className="input-field" type="text" name="vehicle" onChange={onFormChange} value={`${rentalVeh.brand} ${rentalVeh.model}`}></Form.Control>
+                    <Form.Control className="input-field" type="text" name="vehicle" onChange={onFormChangeHandler} value={`${rentalVeh.brand} ${rentalVeh.model}`}></Form.Control>
                 </Form.Group>
                 <div className="row">
                     <div className="col">
                         <Form.Group>
                             <Form.Label className="form-label">Start date</Form.Label>
-                            <Form.Control className="input-field" type="date" name="startDate" onChange={onFormChange} value={currentRental.startDate}></Form.Control>
+                            <Form.Control className="input-field" type="date" name="startDate" onChange={onFormChangeHandler} value={currentRental.startDate}></Form.Control>
                         </Form.Group>
                     </div>
                     <div className="col">
                         <Form.Group>
                             <Form.Label className="form-label">End date</Form.Label>
-                            <Form.Control className="input-field" type="date" name="endDate" onChange={onFormChange} value={currentRental.endDate}></Form.Control>
+                            <Form.Control className="input-field" type="date" name="endDate" onChange={onFormChangeHandler} value={currentRental.endDate}></Form.Control>
                         </Form.Group>
                     </div>
                 </div>
                 <Form.Group>
                     <Form.Label className="form-label">Price</Form.Label>
-                    <Form.Control className="input-field" type="number" name="price" onChange={onPriceChange} value={price2} ></Form.Control>
+                    <Form.Control className="input-field" type="number" name="price" onChange={onPriceChangeHandler} value={price2} ></Form.Control>
                 </Form.Group>
                 <Button className=" btn form-btn" type="submit">Rent</Button>
             </Form>

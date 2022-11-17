@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { deleteVehicle, getVehicles, rentVehicle } from "../../../utils/services/vehicle-http-utils";
-import { VehicleCard } from "../vehicle-details/VehicleCard";
+import { VehicleCard } from "../vehicle-card/VehicleCard";
 import React from "react";
 import './VehiclesList.scss';
 

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Table } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { deleteRental, getRental } from "../../../utils/services/rent-http-utils";
+import './RentalList.scss';
 import React from "react";
 
 const wrapperStyles = {
@@ -43,8 +44,8 @@ export function RentalList() {
                 <td>{rental.startDate   }</td>
                 <td>{rental.endDate}</td>
                 <td className="action-buttons">
-                    <button className="edit" onClick={onEdit}>Edit</button>
-                    <button className="delete" onClick={onDelete}>Delete</button>
+                    <button className="edit btn btn-warning me-3" onClick={onEdit}>Edit</button>
+                    <button className="delete btn btn-danger" onClick={onDelete}>Delete</button>
                 </td>
             </tr>
         })

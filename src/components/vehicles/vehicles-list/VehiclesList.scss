@@ -1,6 +1,18 @@
 .vehicles-list{
-    width: 87%;
+    display: flex;
+    flex-wrap: wrap;
     margin: auto;
     margin-top: 5rem;
-    // background-color: blue;
+    width: 87%;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 1400px) {
+    .vehicles-list{
+        // width: 100%;
+    // justify-content: center;
+
+        justify-content: start;
+    }
+
 }

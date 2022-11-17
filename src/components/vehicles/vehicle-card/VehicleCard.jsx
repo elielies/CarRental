@@ -30,12 +30,6 @@ export function VehicleCard({vehicle, onDelete}) {
      const rentClicked2 = () => {
           setRentVeh(vehicle)
             navigate(`/rentals/rent/${vehicle.id}`, {vehicle});
-            // navigate(`/rentals/rent/${vehicle.id}`, {vehicle});
-
-          
-        // rentVehicle(vehicle).then(() => {
-            // navigate(`/rentals/rent/${vehicle.id}`, {vehicle});
-        // })
     }
 
 
@@ -56,23 +50,27 @@ export function VehicleCard({vehicle, onDelete}) {
       }    
     }
 
+    const navigateToDetailsHandler = () => {
+      navigate(`/vehicles/details/${vehicle.id}`);
+    }
+
     
-      if(vehicle.count > 1) {
+      if(vehicle.count >= 1) {
         return (
-          <Card style={{ width: '18rem', margin: '20px' }}>
-            <Card.Img variant="top" src={vehicle.photo} height="190rem"/>
+          <Card className=" rounded-0"  style={{ width: '18rem', margin: '20px' }}>
+            <Card.Img className="rounded-0" onClick={navigateToDetailsHandler} variant="top" src={vehicle.photo} height="190rem"/>
             <Card.Body>
-              <Card.Title>{vehicle.brand} {vehicle.model} {vehicle.constructionYear}</Card.Title>
+              <Card.Title onClick={navigateToDetailsHandler}>{vehicle.brand} {vehicle.model} {vehicle.constructionYear}</Card.Title>
             </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroup.Item>brand: {vehicle.brand}</ListGroup.Item>
-              <ListGroup.Item>model: {vehicle.model}</ListGroup.Item>
-              <ListGroup.Item>type: {vehicle.type}</ListGroup.Item>
-              <ListGroup.Item>fuel: {vehicle.fuelType}</ListGroup.Item>
-              <ListGroup.Item>seats: {vehicle.seatCount}</ListGroup.Item>
-              <ListGroup.Item>price per day: {vehicle.pricePDay}</ListGroup.Item>
+            <ListGroup onClick={navigateToDetailsHandler} className="list-group-flush">
+              {/* <ListGroup.Item>brand: {vehicle.brand}</ListGroup.Item> */}
+              {/* <ListGroup.Item>model: {vehicle.model}</ListGroup.Item> */}
+              {/* <ListGroup.Item>type: {vehicle.type} </ListGroup.Item> */}
+              {/* <ListGroup.Item>fuel: {vehicle.fuelType}</ListGroup.Item> */}
+              {/* <ListGroup.Item>seats: {vehicle.seatCount}</ListGroup.Item> */}
+              <ListGroup.Item className="border-0" >price per day: {vehicle.pricePDay}</ListGroup.Item>
               <ListGroup.Item>available: {vehicle.count}</ListGroup.Item>
-              <ListGroup.Item>contruction year: {vehicle.constructionYear}</ListGroup.Item>
+              {/* <ListGroup.Item>contruction year: {vehicle.constructionYear}</ListGroup.Item> */}
             </ListGroup>
             <Card.Body>
               {renderActionButtons()}

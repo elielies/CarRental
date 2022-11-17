@@ -59,10 +59,10 @@ export  function VehicleForm() {
         <>
         <div className="vehicle-form-wrapper">
             <div className="row">
-                <div className="col-8">
+                <div className="col-7">
                 <h1 className="form-title">Add vehicle</h1>
                 </div>
-                <div className="col">
+                <div className="col btn-back-container">
                 <Button className="btn btn-back" onClick={navigateToVehicles}>All vehicles</Button>
                 </div>
             </div>

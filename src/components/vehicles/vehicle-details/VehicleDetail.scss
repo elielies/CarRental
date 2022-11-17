@@ -1,0 +1,48 @@
+
+body {
+    overflow-x: hidden; 
+}
+  
+.detail-card {
+    margin-top: 50px;
+    padding: 3em;
+    line-height: 1.5em;
+ }
+
+.car-image {
+    max-width: 100%; 
+}
+  
+.details-pane{
+ 
+        .description{
+            font-weight: 600;
+        }
+
+        .btn-rent{
+            width: 10rem;
+            border: none;
+            border-radius: 6px;
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+}
+
+
+@media screen and (max-width: 996px) {
+      .preview {
+        margin-bottom: 20px; } 
+}
+
+
+  
+@media screen and (min-width: 997px) {
+    .wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; } 
+}
+  
+
+  

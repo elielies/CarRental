@@ -10,7 +10,16 @@ const apiUrl = 'http://localhost:3005/rentals';
 
 
 export function getRental() {
-    return axios.get(apiUrl);
+    // return axios.get(apiUrl);
+
+    const loggedUser = getLoggedUser();
+    if(loggedUser.isAdmin){
+        return axios.get(apiUrl);
+    }
+
+    // http://localhost:3002/rentals?authorId=4
+    const url =  `${apiUrl}?customerId=${loggedUser.id}`
+     return axios.get(url);
 }
 
 export function getRentalById(id) {

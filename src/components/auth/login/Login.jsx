@@ -37,24 +37,42 @@ export function Login() {
             })
     }
 
+    const navigateToRegister = () => {
+        navigate('/register');
+    }
+
 
     return (
         <>
         <Header></Header>
         <div className="login-form-wrapper">
+            <h1 className="form-title">Wellcome back!</h1>
+            <h5 className="form-subtitle">Sign in to your account</h5>
             <Form className="login-form" onSubmit={onFormSubmit}>
                 <span className="text-danger">
                     {error}
                 </span>
-                <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" name="email" onChange={onFormControlChange} required/>
+                <Form.Group className="mb-3">
+                    <Form.Label className="form-label">Email</Form.Label>
+                    <Form.Control className="input-field" type="email" name="email" onChange={onFormControlChange} required/>
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" onChange={onFormControlChange} required />
+                <Form.Group className="mb-3"> 
+                    <Form.Label className="form-label">Password</Form.Label>
+                    <Form.Control className="input-field" type="password" name="password" onChange={onFormControlChange} required />
                 </Form.Group>
-                <Button type="submit">Login</Button>
+                <div className="row mt-5">
+                    <div className="row btn-container">
+                    {/* <div className="col-5"> */}
+                        <Button className="btn btn-submit" variant="primary" type="submit" >Login</Button>
+                    </div>
+                    <div className="row">
+                    {/* <div className="col"> */}
+                        <p className="membership">Don't have an account?&nbsp;
+                            <a className="sign-in-link" onClick={navigateToRegister}>Sign up</a>
+                        </p>
+                    </div>
+                </div>
+                {/* <Button className="btn btn-submit" variant="primary" type="submit" >Login</Button> */}
             </Form>
         </div>
         </>

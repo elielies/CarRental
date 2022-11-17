@@ -22,6 +22,7 @@ export function Header() {
 
     const renderLogin = () => {
         if(loggedUser) {
+
             return <Button id="logout-btn" className="btn btn-cred" onClick={onLogout}>Logout</Button>
             // return <Link className="nav-link" onClick={onLogout}>Logout</Link>
         }
@@ -30,11 +31,11 @@ export function Header() {
     }
 
     const renderCreate =() => {
-        if(loggedUser.isAdmin) {
+        if(loggedUser && loggedUser.isAdmin) {
             return <>
+                    {/* <Link className="nav-link" to="/rentals">Rentals</Link> */}
                     <Link className="nav-link" to="/users/create">Create users</Link>
                     <Link className="nav-link" to="/vehicles/create">Create vehicle</Link>
-                    <Link className="nav-link" to="/rentals">Rentals</Link>
             </>
         }
     }
@@ -42,18 +43,20 @@ export function Header() {
         <div className="header">
             <Navbar className="navbar-dark" expand="lg">
             <Container>
-                <Navbar.Brand id="logo" href="#home">Rent-A-Car</Navbar.Brand>
+                <Navbar.Brand id="logo" href="/home">Rent-A-Car</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Link className="nav-link" to="/users">Users</Link>
-                    <Link className="nav-link" to="/users/create">Create users</Link>
+                    {/* <Link className="nav-link" to="/users/create">Create users</Link> */}
                     {/* <Link className="nav-link" to="/tasks">Tasks</Link> */}
                     {/* <Link className="nav-link" to="/tasks/create">Create task</Link> */}
+                    
+                    
                     <Link className="nav-link" to="/vehicles">Vehicles</Link>
-                    <Link className="nav-link" to="/vehicles/create">Create vehicle</Link>
+                    {/* <Link className="nav-link" to="/vehicles/create">Create vehicle</Link> */}
                     <Link className="nav-link" to="/rentals">Rentals</Link>
-                    {/* {renderCreate()} */}
+                    {renderCreate()}
                 </Nav>
                 {renderLogin()}
 

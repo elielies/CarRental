@@ -3,31 +3,29 @@
 .user-form-wrapper{
     background-color: white;
     border-radius: 10px;
-    width: 60%;
+    // width: 60%;
+    width: 90%;
     margin: auto;
     margin-top: 4rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.form-title{
-    // margin-top: 5rem;
-    padding: 4rem 5rem 0 5rem;
+.user-form-title{
+    margin-top: 4rem;
+    margin-left: 1rem !important;
     font-weight: bold;
 }
 
 .user-form{
-    // width: 50%;
-    padding: 4rem 5rem 3rem 5rem;
+    padding: 1rem 2rem 3rem 2rem;
 }
 
 .form-label{
-    // font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
 .input-field {
     background-color: #e6e7e8;
-    // background-color: #fcd3d2;
     border: none;
     margin-bottom: 1rem;
     font-family: 'Roboto', sans-serif;
@@ -41,41 +39,65 @@
 }
 
 .btn-submit{
-    // background-color: #e61815;
     background: -webkit-linear-gradient(right, #c9100c, #e61815 );
-    // background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
     border-radius: 20px;
     border: none;
-    width: 9rem;
+    width: 9rem !important;
     font-weight:600;
     transition: 0.3s;
-    // margin-top: 1rem;
 }
 
 .btn-submit:hover{
-    // background-color: #c9100c;
     box-shadow: 0px 1px 15px #ee2925;
-    // box-shadow: 0px 1px 18px #24c64f;
 }
 
 #membership{
+    display: flex;
     padding-top: 0.4rem;
     font-weight:600;
+    justify-content: flex-end;
 }
 
-.underlay {
-    // position: fixed; /* Sit on top of the page content */
-    // display: none; /* Hidden by default */
-    // width: 100%; /* Full width (cover the whole page) */
-    // height: 100%; /* Full height (cover the whole page) */
-    background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
-    
-    // background-color: rgba(0,0,0,0.7); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    // cursor: pointer; /* Add a pointer on hover */
-    h3{
-        color: #ffff;
-        padding: 4rem 5rem 0 5rem;
-        font-weight: bold;
+@media only screen and (min-width: 992px) {
+    .user-form-wrapper{
+        // width: 60%;
+        width: 60%;
+        margin: auto;
+        margin-top: 4rem;
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
-  }
+}
+
+@media only screen and (min-width: 1200px) {
+    .user-form-wrapper{
+        width: 50%;
+        margin: auto;
+        margin-top: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .user-form-wrapper{
+        width: 40%;
+        margin: auto;
+        margin-top: 4rem;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .user-form-wrapper{
+        width: 35%;
+        margin: auto;
+        margin-top: 4rem;
+    }
+
+    .user-form{
+        padding: 1rem 3rem 3rem 3rem !important;
+    }
+    .user-form-title{
+        margin-left: 2.20rem !important;
+        // padding: 0 !important;
+
+        // display: flex;
+        // justify-content: start;
+    }
+}
