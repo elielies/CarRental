@@ -1,4 +1,6 @@
-import { Card } from "react-bootstrap";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { getLoggedUser } from "../../../utils/services/auth-http-utils";
@@ -24,28 +26,36 @@ export function UserCard({user, onDelete}) {
 
       if(loggedUser.isAdmin && loggedUser.id !== user.id) {
         return <>
-        <Card.Link onClick={navigateToUpdate}>Update</Card.Link>
-        <Card.Link  onClick={onDeleteClicked}>Delete</Card.Link>
+        <div className="text-center">
+        <Button className="btn user-btn me-3" onClick={navigateToUpdate}><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Button>
+        <Button className="btn user-btn btn-danger" onClick={onDeleteClicked}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
+        </div>
       </>
       }
 
       if (loggedUser.id === user.id) {
-        return <Card.Link onClick={navigateToUpdate}>Update</Card.Link>
+        return <div className="text-center">
+        <Button className="btn user-btn" onClick={navigateToUpdate}><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Button>
+        </div>
+
       }
     }
 
     return (
         <Card style={{ width: '18rem', margin: '20px'}}>
-          <Card.Img variant="top" src={user.photo}/>
+          <Card.Img className="user-card-img" variant="top" src={user.photo} height="350px"/>
           <Card.Body>
-            <Card.Title>{user.firstName} {user.lastName}</Card.Title>
+            <Card.Title className="user-title">{user.firstName} {user.lastName}</Card.Title>
           </Card.Body>
-          <ListGroup className="list-group-flush">
+          <ListGroup className="card-detail list-group-flush">
             <ListGroup.Item>email: {user.email}</ListGroup.Item>
+            <ListGroup.Item>phone: {user.phone}</ListGroup.Item>
           </ListGroup>
           <Card.Body>
             {renderActionButtons()}
           </Card.Body>
         </Card>
+
+
     )
 }

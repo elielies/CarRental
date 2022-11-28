@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { getVehicleById, setRentVeh } from "../../../utils/services/vehicle-http-utils";
-import { VehicleCard } from "../vehicle-card/VehicleCard";
 import { Button } from "react-bootstrap";
 import './VehicleDetail.scss';
 
@@ -25,9 +24,14 @@ export function VehicleDetail () {
         navigate(`/rentals/rent/${vehicle.id}`);
     }
 
+    const navigateToVehiclesHandler = () =>{
+        navigate(`/vehicles`);
+    }
+ 
     return (
         <div class="container">
 		<div class="detail-card">
+        <Button onClick={navigateToVehiclesHandler} className="mb-5 btn btn-to-veh">Back to vehicles</Button>
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-md-8">

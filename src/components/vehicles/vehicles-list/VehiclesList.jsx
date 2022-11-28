@@ -4,11 +4,14 @@ import { deleteVehicle, getVehicles, rentVehicle } from "../../../utils/services
 import { VehicleCard } from "../vehicle-card/VehicleCard";
 import React from "react";
 import './VehiclesList.scss';
+import { Button } from "react-bootstrap";
+import { getLoggedUser } from "../../../utils/services/auth-http-utils";
 
 
 export function VehiclesList() {
     const [vehicles, setVehicles] = useState([]);
     const navigate = useNavigate();
+    
 
     useEffect(() =>{
         getVehicles()
@@ -25,13 +28,21 @@ export function VehiclesList() {
         })
     }
 
-    
+    const renderCreateBtn = () => {
+        const loggedUser = getLoggedUser();
+        if(loggedUser.isAdmin){
+            return <Button onClick={navigateToCreateVehicleHandler} className="mb-5 btn btn-add-new">Create new vehicle</Button>
+        } 
+    }
 
+    const navigateToCreateVehicleHandler = () => {
+            navigate(`/vehicles/create`);
+    }
 
     return (
         <div className="vehicles-list" style={{display: 'flex'}}>
+            {renderCreateBtn()}
             {vehicles.map(vehicle => <VehicleCard key={vehicle.id} vehicle={vehicle} onDelete={onDelete} />)}
-            {/* {vehicles.map(vehicle => <VehicleCard key={vehicle.id} vehicle={vehicle} onDelete={onDelete} onRent={onRent}/>)} */}
         </div>
     )
 }

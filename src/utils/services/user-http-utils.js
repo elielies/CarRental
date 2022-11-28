@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getLoggedUser } from "./auth-http-utils";
 
 const apiUrl = "http://localhost:3005/users";
 
@@ -11,11 +12,9 @@ export function getUserById(id) {
 }
 
 export async function saveUser(userObj) {
-
+    const loggedUser = getLoggedUser();
     if(!userObj.photo) {
-        // https://randomuser.me/api/portraits/men/41.jpg
         userObj.photo = `https://picsum.photos/200/300?random=${Math.random()}`
-        // userObj.photo = `https://randomuser.me/api/portraits/men/${Math.random().jpg}`
     }
 
     const response = await getUsers();
@@ -27,7 +26,9 @@ export async function saveUser(userObj) {
 
     if(userObj.id) {
         return axios.put(`${apiUrl}/${userObj.id}`, userObj).then(() => {
-            localStorage.setItem('loggedUser', JSON.stringify(userObj))
+            if(!loggedUser.isAdmin){
+                localStorage.setItem('loggedUser', JSON.stringify(userObj))
+            }
         })
     }
 

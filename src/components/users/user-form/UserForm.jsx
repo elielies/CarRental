@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Form } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 import { useNavigate, useParams } from "react-router";
+import { getLoggedUser } from "../../../utils/services/auth-http-utils";
 import { parseBool } from "../../../utils/services/bool-utils";
 import { getUserById, saveUser } from "../../../utils/services/user-http-utils";
 import './UserForm.scss';
@@ -14,8 +15,8 @@ export function UserForm() {
         firstName: '',
         lastName: '',
         email: '',
-        // address: '',
         password: '',
+        phone: '',
         photo: '',
         isAdmin: false
     }
@@ -54,6 +55,33 @@ export function UserForm() {
         })
     }
 
+    const checkboxHandler = (event) => {
+        setCurrentUser((prevState) => {
+            return {
+                ...prevState,
+                isAdmin: event.target.checked.toString()
+            }
+        })
+    }
+
+    const renderAdminHandler = () => {
+        const loggedUser = getLoggedUser();
+
+        if (!loggedUser || !loggedUser.isAdmin || loggedUser.id === currentUser.id)
+            return '';
+
+        return <Form.Group className="mb-3" controlId="formBasicEmail">
+            <div className="row">
+                <div className="col-3">
+                    <Form.Label>Make Admin</Form.Label>
+                </div>
+                <div className="col">
+                    <Form.Check name="isAdmin" onChange={checkboxHandler} checked={parseBool(currentUser.isAdmin)} />
+                </div>
+            </div>
+        </Form.Group>
+    }
+
     
 
 
@@ -88,6 +116,10 @@ export function UserForm() {
                     <Form.Control className="input-field" type="email" name="email" placeholder="Enter email" onChange={onFormControlChange} value={currentUser.email} required/>
                     <span className="error-message text-danger">{error}</span>
                 </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPhone">
+                    <Form.Label className="form-label">Phone</Form.Label>
+                    <Form.Control className="input-field" type="text" name="phone" placeholder="Enter phone" onChange={onFormControlChange} value={currentUser.phone} required/>
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className="form-label">Password</Form.Label>
                     <Form.Control className="input-field" type="password" name="password" placeholder="Password" onChange={onFormControlChange} value={currentUser.password} required/>
@@ -96,10 +128,7 @@ export function UserForm() {
                     <Form.Label className="form-label">Photo</Form.Label>
                     <Form.Control className="input-field" type="text" name="photo" placeholder="Enter photo" onChange={onFormControlChange} value={currentUser.photo}/>
                 </Form.Group>
-                {/* <Form.Group className="mb-3" controlId="formBasicPhoto">
-                    <Form.Label>Is Admin</Form.Label>
-                    <Form.Check name="isAdmin" onChange={onCheckboxChange} checked={ parseBool(currentUser.isAdmin) }/>
-                </Form.Group> */}
+                {renderAdminHandler()}
                 <div className="row mt-5">
                     <div className="col-5">
                         <Button className="btn btn-submit" variant="primary" type="submit" >REGISTER</Button>

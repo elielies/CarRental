@@ -25,7 +25,6 @@ export  function RentForm() {
     useEffect(() => {
         if(params.id) {
             const editId = `${params.id}${loggedUser.id}`
-            // getRentalById(params.id).then( (response) => {
                 getRentalById(editId).then( (response) => {
                 setCurrentRental(response.data)
             })
@@ -43,19 +42,34 @@ export  function RentForm() {
         });
     }
 
+    // const onFormSubmitHandler = (event) => {
+    //     event.preventDefault();  
+    //     rentVehicle(rentalVeh).then(() => {
+    //         saveRental(currentRental).then(()=>{
+    //             navigate('/vehicles');
+    //         })
+    //     })
+    // }
+
+
     const onFormSubmitHandler = (event) => {
         event.preventDefault();  
-        rentVehicle(rentalVeh).then(() => {
+        if(!currentRental.id){
+            rentVehicle(rentalVeh).then(() => {
+                saveRental(currentRental).then(()=>{
+                    navigate('/vehicles');
+                })
+            }) 
+        } else{
             saveRental(currentRental).then(()=>{
                 navigate('/vehicles');
             })
-        })
+        }
         
     }
 
 
     let price2 = rentalVeh.pricePDay
-    console.log(rentalVeh.pricePDay)
 
     const priceCalc = () => {
         if(diffDays < 6 && diffDays > 3){
@@ -63,7 +77,6 @@ export  function RentForm() {
         } else if(diffDays < 11 && diffDays > 5) {
             price2 = price2 - price2 * 0.07
         } else if(diffDays > 10){
-            // console.log(diffDays + " days")
             price2 = price2 - price2 * 0.1
         }
     }

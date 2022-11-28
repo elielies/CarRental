@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import { ListGroup } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { getLoggedUser } from "../../../utils/services/auth-http-utils";
 import { rentVehicle, setRentVeh, setRentVehicle } from "../../../utils/services/vehicle-http-utils";
 import React from "react";
+import './VehicleCard.scss'
 
 
 export function VehicleCard({vehicle, onDelete}) {
@@ -19,15 +18,8 @@ export function VehicleCard({vehicle, onDelete}) {
       navigate(`/vehicles/edit/${vehicle.id}`);
     }
 
-    // fall back
-    // const rentClicked2 = () => {
-    //     rentVehicle(vehicle).then(() => {
-    //         navigate(`/rentals/rent/${vehicle.id}`, {vehicle});
-    //     })
-    // }
-    //
 
-     const rentClicked2 = () => {
+     const rentClicked = () => {
           setRentVeh(vehicle)
             navigate(`/rentals/rent/${vehicle.id}`, {vehicle});
     }
@@ -38,15 +30,16 @@ export function VehicleCard({vehicle, onDelete}) {
 
       if(loggedUser.isAdmin) {
         return <>
-          <Button onClick={navigateToUpdate} >Update</Button>
+          <Button onClick={navigateToDetailsHandler} >Details</Button>
+          <Button onClick={navigateToUpdate} className='ms-2'>Update</Button>
           <Button onClick={onDeleteClicked} className='ms-2 btn-danger'>Delete</Button>
-          <Button onClick={rentClicked2}className='ms-2 btn-warning'>Rent</Button>
-          {/* <Card.Link onClick={navigateToUpdate}>Update</Card.Link> */}
-          {/* <Card.Link  onClick={onDeleteClicked}>Delete</Card.Link> */}
-          {/* <Card.Link onClick={rentClicked2}>Rent</Card.Link> */}
+          <Button onClick={rentClicked}className='ms-2 btn-warning'>Rent</Button>
         </>
       }else{
-         return  <Button onClick={rentClicked2}>Rent</Button>
+         return  <>
+          <Button onClick={navigateToDetailsHandler} >Details</Button>
+          <Button onClick={rentClicked} className='ms-2 btn-warning'>Rent</Button>
+         </>
       }    
     }
 
@@ -57,25 +50,45 @@ export function VehicleCard({vehicle, onDelete}) {
     
       if(vehicle.count >= 1) {
         return (
-          <Card className=" rounded-0"  style={{ width: '18rem', margin: '20px' }}>
-            <Card.Img className="rounded-0" onClick={navigateToDetailsHandler} variant="top" src={vehicle.photo} height="190rem"/>
-            <Card.Body>
-              <Card.Title onClick={navigateToDetailsHandler}>{vehicle.brand} {vehicle.model} {vehicle.constructionYear}</Card.Title>
-            </Card.Body>
-            <ListGroup onClick={navigateToDetailsHandler} className="list-group-flush">
-              {/* <ListGroup.Item>brand: {vehicle.brand}</ListGroup.Item> */}
-              {/* <ListGroup.Item>model: {vehicle.model}</ListGroup.Item> */}
-              {/* <ListGroup.Item>type: {vehicle.type} </ListGroup.Item> */}
-              {/* <ListGroup.Item>fuel: {vehicle.fuelType}</ListGroup.Item> */}
-              {/* <ListGroup.Item>seats: {vehicle.seatCount}</ListGroup.Item> */}
-              <ListGroup.Item className="border-0" >price per day: {vehicle.pricePDay}</ListGroup.Item>
-              <ListGroup.Item>available: {vehicle.count}</ListGroup.Item>
-              {/* <ListGroup.Item>contruction year: {vehicle.constructionYear}</ListGroup.Item> */}
-            </ListGroup>
-            <Card.Body>
-              {renderActionButtons()}
-            </Card.Body>
-          </Card>
+          
+          <div className="single-card">
+            <article className="postcard dark red">
+              <a className="postcard__img_link" onClick={navigateToDetailsHandler}>
+                <img className="postcard__img" src={vehicle.photo} alt="Image Title"/>	
+              </a>
+              <div className="postcard__text">
+                <div className="ms-2">
+                <h1 className="postcard__title red" onClick={navigateToDetailsHandler}>{vehicle.brand} {vehicle.model}</h1>
+                <div className="postcard__bar"></div>
+                <div className="row details">
+                            <div className="col-4  ">
+                                <div>Brand</div>
+                                <div>Model</div>
+                                <div>Type</div>
+                                <div>Fuel</div>
+                                <div>Seats</div>
+                                <div>Price</div>
+                                <div>Year</div>
+                                <div>Available</div>
+                            </div>
+                            <div className="col-6 ">
+                                <div>{vehicle.brand}</div>
+                                <div>{vehicle.model}</div>
+                                <div>{vehicle.type}</div>
+                                <div>{vehicle.fuelType}</div>
+                                <div>{vehicle.seatCount}</div>
+                                <div>{vehicle.pricePDay}</div>
+                                <div>{vehicle.constructionYear}</div>
+                                <div>{vehicle.count}</div>
+                            </div>
+                </div>
+                <ul className="postcard__tagbox">
+                {renderActionButtons()}
+                </ul>
+              </div>
+              </div>
+            </article>
+          </div>
       )
       }
     

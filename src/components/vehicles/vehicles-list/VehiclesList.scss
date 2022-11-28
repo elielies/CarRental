@@ -7,9 +7,25 @@
     justify-content: center;
 }
 
+.btn-add-new{
+    // width: 60%;
+    margin-bottom: 1rem;
+    background: -webkit-linear-gradient(right, #c9100c, #e61815 ) !important;
+    border: none;
+    // border-radius: 20px;
+    font-weight:600;
+    transition: 0.3s;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.btn-add-new:hover{
+    box-shadow: 0px 1px 15px #ee2925;
+}
+
 @media only screen and (min-width: 1400px) {
     .vehicles-list{
-        // width: 100%;
+        width: 70%;
     // justify-content: center;
 
         justify-content: start;

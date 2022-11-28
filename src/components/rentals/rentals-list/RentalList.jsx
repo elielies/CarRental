@@ -6,9 +6,7 @@ import { deleteRental, getRental } from "../../../utils/services/rent-http-utils
 import './RentalList.scss';
 import React from "react";
 
-const wrapperStyles = {
-    margin: '5rem'
-};
+
 
 export function RentalList() {
     const [rentals, setRental] = useState([]);
@@ -25,7 +23,7 @@ export function RentalList() {
         return rentals.map(rental => {
 
             const onEdit = () => {
-                navigate(`/rentals/edit/${rental.id}`)
+                navigate(`/rentals/rent/${rental.vehicleId}`)
             }
 
             const onDelete = () => {
@@ -41,10 +39,10 @@ export function RentalList() {
                 <td>{rental.vehicle}</td>
                 <td>{rental.customer}</td>
                 <td>{rental.price}</td>
-                <td>{rental.startDate   }</td>
+                <td>{rental.startDate}</td>
                 <td>{rental.endDate}</td>
                 <td className="action-buttons">
-                    <button className="edit btn btn-warning me-3" onClick={onEdit}>Edit</button>
+                    {/* <button className="edit btn btn-warning me-3" onClick={onEdit}>Edit</button> */}
                     <button className="delete btn btn-danger" onClick={onDelete}>Delete</button>
                 </td>
             </tr>
@@ -53,7 +51,7 @@ export function RentalList() {
 
 
     return (
-        <div className="tasks-list" style={wrapperStyles}>
+        <div className="tasks-list" >
             <Table striped hover bordered>
                 <thead>
                     <tr>

@@ -10,20 +10,18 @@ const apiUrl = 'http://localhost:3005/rentals';
 
 
 export function getRental() {
-    // return axios.get(apiUrl);
 
     const loggedUser = getLoggedUser();
     if(loggedUser.isAdmin){
         return axios.get(apiUrl);
     }
 
-    // http://localhost:3002/rentals?authorId=4
+    // http://localhost:3002/rentals?customerId=4
     const url =  `${apiUrl}?customerId=${loggedUser.id}`
      return axios.get(url);
 }
 
 export function getRentalById(id) {
-    // return axios.get(`${apiUrl}/${id}`);
     return axios.get(`${apiUrl}/${id}`);
 }
 
@@ -32,25 +30,12 @@ export function saveRental(rentObj) {
     const loggedUser = getLoggedUser();
     const rentVehicle = getRentVehicle();
 
-    // this will break rentals edit when commented  
-    // maybe return a popup when the id exists 
-    // also maybe create a separate function for updating
-    // if (rentObj.id && rentObj.customerId !== loggedUser.id) - check for availabilty
-    // if(rentObj.id && (rentObj.customerId === loggedUser.id)){
-    // if(rentObj.id){
-    //     // http://localhost:3005/tasks/3
-    //     return axios.put(`${apiUrl}/${rentObj.id}`, rentObj);
-    // }
-
-
-    const tempId = rentObj.id;
     if(rentObj.id){
-        console.log(rentObj.id)
         return axios.put(`${apiUrl}/${rentObj.id}`, rentObj);
-        // return axios.put(`${apiUrl}/${rentObj.id}`, rentObj);
     }
     rentObj.id = `${rentVehicle.id}${loggedUser.id}`
-    rentObj.vehicle = rentVehicle.brand;
+    rentObj.vehicle = `${rentVehicle.brand} ${rentVehicle.model}`;
+    // rentObj.vehicle = rentVehicle.brand;
     rentObj.vehicleId = rentVehicle.id;
     rentObj.customerId = loggedUser.id;
     rentObj.customer = `${loggedUser.firstName} ${loggedUser.lastName}`

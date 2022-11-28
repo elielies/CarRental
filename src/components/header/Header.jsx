@@ -43,7 +43,7 @@ export function Header() {
         <div className="header">
             <Navbar className="navbar-dark" expand="lg">
             <Container>
-                <Navbar.Brand id="logo" href="/home">Rent-A-Car</Navbar.Brand>
+                <Navbar.Brand id="logo" href="/home">Nitro</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">

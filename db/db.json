@@ -2,12 +2,13 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Todor",
+      "firstName": "Angel",
       "lastName": "Ivanov",
-      "email": "todor@abv.bg",
+      "email": "angel@abv.bg",
       "password": "123",
       "photo": "https://picsum.photos/200/300?random=1",
-      "isAdmin": "true"
+      "isAdmin": "true",
+      "phone": "088464646"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "email": "stela@abv.bg",
       "password": "123",
       "photo": "https://picsum.photos/200/300?random=0.13979434215239062",
-      "isAdmin": "true"
+      "isAdmin": "true",
+      "phone": "088454649"
     },
     {
       "firstName": "Belle",
@@ -25,34 +27,28 @@
       "email": "belle@abv.bg",
       "id": 7,
       "photo": "https://picsum.photos/200/300?random=0.3683714117205166",
-      "isAdmin": "false"
+      "isAdmin": "false",
+      "phone": "0888131313"
     },
     {
       "firstName": "Stella",
-      "lastName": "Petkova",
+      "lastName": "Petrova",
       "email": "stella@abv.bg",
       "password": "123",
       "photo": "https://picsum.photos/200/300?random=0.24308252649104944",
       "isAdmin": false,
-      "id": 10
-    },
-    {
-      "firstName": "Maria",
-      "lastName": "Rangelova",
-      "email": "maria@abv.bg",
-      "password": "123",
-      "photo": "https://picsum.photos/200/300?random=0.4154261863330666",
-      "isAdmin": false,
-      "id": 11
+      "id": 10,
+      "phone": "087164676"
     },
     {
       "firstName": "Mariya",
       "lastName": "Angelova",
-      "email": "stelaa@abv.bg",
+      "email": "mariya@abv.bg",
       "password": "123",
       "photo": "https://picsum.photos/200/300?random=0.4154263330666",
       "isAdmin": false,
-      "id": 12
+      "id": 12,
+      "phone": "089191919"
     },
     {
       "firstName": "Mitko",
@@ -61,7 +57,48 @@
       "password": "123",
       "photo": "https://picsum.photos/200/300?random=0.41542618633306",
       "isAdmin": false,
-      "id": 13
+      "id": 13,
+      "phone": "089494949"
+    },
+    {
+      "firstName": "Petko",
+      "lastName": "Petkov",
+      "email": "petko@abv.bg",
+      "password": "123",
+      "photo": "https://picsum.photos/200/300?random=0.8346972952029434",
+      "isAdmin": false,
+      "id": 14,
+      "phone": "088124579"
+    },
+    {
+      "firstName": "Dimitar",
+      "lastName": "Dimov",
+      "email": "dimchou@abv.bg",
+      "password": "123",
+      "phone": "088171216",
+      "photo": "https://picsum.photos/200/300?random=0.4623314524442179",
+      "isAdmin": "true",
+      "id": 16
+    },
+    {
+      "firstName": "Diana",
+      "lastName": "Antetokounpo",
+      "email": "diana@abv.bg",
+      "password": "123",
+      "phone": "087161616",
+      "photo": "https://picsum.photos/200/300?random=0.40402315907600506",
+      "isAdmin": false,
+      "id": 17
+    },
+    {
+      "firstName": "Nia",
+      "lastName": "Nevenova",
+      "email": "nia@abv.bg",
+      "password": "123",
+      "phone": "0898994613",
+      "photo": "https://picsum.photos/200/300?random=0.5542774960722925",
+      "isAdmin": false,
+      "id": 18
     }
   ],
   "vehicles": [
@@ -74,7 +111,7 @@
       "seatCount": "4",
       "picture": "",
       "pricePDay": "50",
-      "count": 8,
+      "count": 5,
       "photo": "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/2002_Audi_A4_Avant.jpg",
       "id": 1
     },
@@ -100,7 +137,7 @@
       "seatCount": "4",
       "picture": "",
       "pricePDay": "63",
-      "count": 9,
+      "count": 7,
       "photo": "https://7cars.bg/wp-content/uploads/2022/10/0-02-05-031a1a5aa0876164511d7335d773e8d4891ab71d211105b76a3fac44b6b54228_b42e5cdee3df73d1.jpg",
       "id": 3
     },
@@ -112,9 +149,45 @@
       "fuelType": "diesel",
       "seatCount": "5",
       "pricePDay": "80",
-      "count": "4",
+      "count": 3,
       "photo": "https://7cars.bg/wp-content/uploads/2022/10/0-02-05-befbc7467b5fcdb5b4c26b36e6619bf3349a824b9514f63052f074fb2dc06068_5f3647dc1fa8b1a2-876x535.jpg",
       "id": 4
+    },
+    {
+      "type": "luxury",
+      "brand": "Tesla",
+      "model": "S75D",
+      "constructionYear": "2018",
+      "fuelType": "electric",
+      "seatCount": "4",
+      "pricePDay": "100",
+      "count": 6,
+      "photo": "https://7cars.bg/wp-content/uploads/2022/11/0-02-05-dda38b7b023bdb8992794433ba7f10a2efdcf53937d4213a7a0c9cdc9841d72f_8c59160711d0645f.jpg",
+      "id": 5
+    },
+    {
+      "type": "SUV",
+      "brand": "Porsche",
+      "model": "Cayenne",
+      "constructionYear": "2015",
+      "fuelType": "diesel",
+      "seatCount": "5",
+      "pricePDay": "110",
+      "count": 3,
+      "photo": "https://7cars.bg/wp-content/uploads/2022/08/0-02-05-8f58c43c13682205a60f29856f23238f99d756db6e036939a1bfca543bdbb5ff_a3e4490e30669029-1024x768.jpg",
+      "id": 6
+    },
+    {
+      "type": "SUV",
+      "brand": "Jeep",
+      "model": "Commander",
+      "constructionYear": "2006",
+      "fuelType": "diesel",
+      "seatCount": "5",
+      "pricePDay": "87",
+      "count": 2,
+      "photo": "https://7cars.bg/wp-content/uploads/2022/09/0-02-05-1a5597ff1c25f3f85cb3c5d362102b19a2bfcda66697e24f72071a693e8cf6ce_731ebf7822b91d6c-1024x577.jpg",
+      "id": 7
     }
   ],
   "rentals": [
@@ -149,26 +222,6 @@
       "customer": "Stella Petkova"
     },
     {
-      "startDate": "2022-11-17",
-      "endDate": "2022-12-10",
-      "price": 59.85,
-      "id": "31",
-      "vehicle": "Mercedes",
-      "vehicleId": 3,
-      "customerId": 1,
-      "customer": "Todor Ivanov"
-    },
-    {
-      "startDate": "11/17/2022, 2:00:00 AM",
-      "endDate": "11/29/2022, 2:00:00 AM",
-      "price": 72,
-      "id": "41",
-      "vehicle": "Skoda",
-      "vehicleId": 4,
-      "customerId": 1,
-      "customer": "Todor Ivanov"
-    },
-    {
       "startDate": "11/17/2022, 2:00:00 AM",
       "endDate": "12/5/2022, 2:00:00 AM",
       "price": 56.7,
@@ -177,6 +230,46 @@
       "vehicleId": 3,
       "customerId": 13,
       "customer": "Mitko Mitev"
+    },
+    {
+      "startDate": "11/27/2022, 2:00:00 AM",
+      "endDate": "12/27/2022, 2:00:00 AM",
+      "price": 90,
+      "id": "51",
+      "vehicle": "Tesla",
+      "vehicleId": 5,
+      "customerId": 1,
+      "customer": "Angel Ivanov"
+    },
+    {
+      "startDate": "11/27/2022, 2:00:00 AM",
+      "endDate": "12/1/2022, 2:00:00 AM",
+      "price": 47.5,
+      "id": "114",
+      "vehicle": "Audi",
+      "vehicleId": 1,
+      "customerId": 14,
+      "customer": "Petko Petkov"
+    },
+    {
+      "startDate": "12/8/2022, 2:00:00 AM",
+      "endDate": "12/20/2022, 2:00:00 AM",
+      "price": 99,
+      "id": "617",
+      "vehicle": "Porsche Cayenne",
+      "vehicleId": 6,
+      "customerId": 17,
+      "customer": "Diana Antetokounpo"
+    },
+    {
+      "startDate": "10/31/2022, 2:00:00 AM",
+      "endDate": "12/2/2022, 2:00:00 AM",
+      "price": 78.3,
+      "id": "72",
+      "vehicle": "Jeep Commander",
+      "vehicleId": 7,
+      "customerId": 2,
+      "customer": "Stela Angelova"
     }
   ]
 }

@@ -30,7 +30,7 @@ export function Login() {
         event.preventDefault();
         login(loginCreds)
             .then(() => {
-                navigate('/vehicles')
+                navigate('/home')
             })
             .catch(() => {
                 setError(error.message);

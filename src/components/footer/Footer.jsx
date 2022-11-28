@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import './Footer.scss';
 
 export function Footer(){
@@ -12,8 +14,9 @@ export function Footer(){
         //         <li className="ms-3"><a className="text-muted" href="#"></a></li>
         //     </ul>
         // </div>
-
-        <div id='footer' className='container'>
+        
+        <div id='footer' >
+            <div className='container'>
             <footer className='py-2'>
                 <div className='row'>
                     <div className='col-6 col-md-2 mb-3'>
@@ -35,13 +38,12 @@ export function Footer(){
                         </ul>
                     </div>
                     <div className='col-6 col-md-2 mb-3'>
-                        <h5>More from us</h5>
-                        <ul>
-                            <li>Home</li>
-                            <li>Offers</li>
-                            <li>Comming soon</li>
-                            <li>Rent</li>
-                        </ul>
+                        <h5>Find us at</h5>
+                        <ul className="list-unstyled d-flex icons">
+                        <FontAwesomeIcon className='sm-icon' icon={faInstagram} />
+                        <FontAwesomeIcon className='sm-icon' icon={faTwitter} />
+                        <FontAwesomeIcon className='sm-icon' icon={faFacebook} />
+                    </ul>
                     </div>
                     <div className='col-md-5 offset-md-1 mb-3'>
                         <form>
@@ -50,20 +52,16 @@ export function Footer(){
                             <div className="d-flex flex-column flex-sm-row w-100 gap-2">
                                 <label htmlFor="newsletter1" className="visually-hidden">Email address</label>
                                 <input id="newsletter1" type="text" className="form-control" placeholder="Email address" />
-                                <button className="btn btn-primary" type="button">Subscribe</button>
+                                <button className="btn btn-primary btn-sub" type="button">Subscribe</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                    <p>© 2022 Rent-A-Cat, ООД. All rights reserved.</p>
-                    <ul className="list-unstyled d-flex">
-                        {/* <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li> */}
-                        {/* <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li> */}
-                        {/* <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> */}
-                    </ul>
+                    <p>© 2022 Nitro, ООД. All rights reserved.</p>
                     </div>
             </footer>
+            </div>
         </div>
     )
 }

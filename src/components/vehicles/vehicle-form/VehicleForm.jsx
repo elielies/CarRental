@@ -14,7 +14,6 @@ export  function VehicleForm() {
 
 
     const [curVehicle, setCurVehicle] = useState({
-        // set temps here for the dropdowns
         type: "economy",
         brand: "",
         model: "",
@@ -59,7 +58,7 @@ export  function VehicleForm() {
         <>
         <div className="vehicle-form-wrapper">
             <div className="row">
-                <div className="col-7">
+                <div className="col-6">
                 <h1 className="form-title">Add vehicle</h1>
                 </div>
                 <div className="col btn-back-container">

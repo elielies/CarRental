@@ -43,11 +43,6 @@ export function saveVehicle(vehObj) {
     }
 
 
-    const loggedUser = getLoggedUser();
-    // vehObj.createdDate = new Date().toLocaleString();
-    // vehObj.authorId = loggedUser.id;
-    // vehObj.authorName = `${loggedUser.firstName} ${loggedUser.lastName}`
-
     return axios.post(apiUrl, vehObj);
 }
 

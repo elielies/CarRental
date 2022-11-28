@@ -30,3 +30,62 @@
     text-align: start;
 }
 
+.accordion-container{
+
+    width: 95%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.accordion-item .accordion-button{
+    background-color: #EBEBEB;
+    box-shadow: none;
+}
+.accordion-body{
+    background-color: #EBEBEB;
+
+}
+
+.reviews-container{
+    width: 75%;
+    margin: auto;
+}
+
+.reviews-wrapper{
+    width: 100%;
+}
+
+.review-card{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.container{
+    width: 95%;
+}
+
+.cars-container{
+    width: 50%;
+}
+
+.section-h1{
+    text-align: center;
+    // margin-bottom: 5rem;
+    // margin: auto;
+}
+
+.btn-cars{
+    // width: 60%;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background: -webkit-linear-gradient(right, #c9100c, #e61815 ) !important;
+    border: none;
+    border-radius: 20px;
+    font-weight:600;
+    transition: 0.3s;
+}
+
+.btn-cars:hover{
+    box-shadow: 0px 1px 15px #ee2925;
+}
